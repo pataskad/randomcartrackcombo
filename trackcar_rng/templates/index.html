@@ -11,6 +11,8 @@
     </head>
 
     <body>
+        <!--random.js contains functions to randomize a set of tracks and cars-->
+        <script src="{% static 'js/random.js' %}"></script>
         <!--BREAKDOWN: Create title/header, then two "wells", one for tracks, one for cars.  
             Upon clicking a button randomly select one car and one track from a pre set list via Javascript (may start with two separate functions, then combine later)
             Minimal CSS/SCSS? styling to begin, add in later if necessary but not the purpose of this project
@@ -21,17 +23,27 @@
                 <div class="row">
                     <!--left "card" (aka well) displays track list generator. Ideally displays full list to choose from as well-->
                     <div class="col-lg-6">
-                        <h4>Track list RTG</h4>
+                        <h4>Track list:</h4>
                         <div class="card">
                             <!--Need button to start randomness-->
                             <p>placeholder</p>
+                            <div class="row">
+                                <div class="col-lg-4 mx-auto">
+                                    <button onclick="gettrack()" class="btn btn-primary">Generate Random Track</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!--right "card" (aka well) displays car list generator.  Ideally displays full list to choose from as well-->
                     <div class="col-lg-6">
-                        <h4>Car list RCG</h4>
+                        <h4>Car list:</h4>
                         <div class="card">
                             <p>placeholder</p>
+                            <div class="row">
+                                <div class="col-lg-4 mx-auto">
+                                    <button onclick="getcar()" class="btn btn-primary">Generate Random Car</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -40,7 +52,10 @@
                     <h2>Result:</h2>
                     <div class="card">
                         <!--Need button to start randomness-->
-                        <p>placeholder</p>
+                        <h3>Track Selection:</h3>
+                        <div id="trackresult"></div>
+                        <h3>Car Selection:</h3>
+                        <div id="carresult"></div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
-Version: v1.0.0
+Version: v1.0.1
 Created: 06/03/2021
-Last Update: 06/03/2021
+Last Update: 06/04/2021
 
 # Random Track and Car generator using Javascript #
 
@@ -11,11 +11,8 @@ Last Update: 06/03/2021
 
     Additionally, the future theory of this project is to allow any user to add in their own tracks and cars to randomly select from upon the click of a button.
 
-*** Technologies utilized ***
-    Javascript
-    HTML5, CSS3
-    Bootstrap v4.1.3, CSS cdn only as of v1.0.0
-    Django/Python
+# Technologies utilized #
+    Javascript, HTML5, CSS3, Bootstrap v4.1.3, CSS cdn only as of v1.0.0, Django/Python
 
 # Thank you for checking out this project, if you have any questions or comments about this please contact me via [LinkedIn](https://www.linkedin.com/in/dallas-pataska/) #
 
