@@ -25,7 +25,15 @@ let trackList = [
     'Thompson',
     'USA'
 ]
-const trackRandom = Math.floor(Math.random() * trackList.length);
+// function iterates through trackList and outputs each (item) into the html #tracks div
+function displayTracks() {
+    let tracks = '';
+    trackList.forEach(function (item) {
+        tracks += "<li>" + item + "</li>";
+    });
+    document.getElementById("tracks").innerHTML = tracks;
+}
+displayTracks();
 
 let carList = [
     'ARCA',
@@ -36,14 +44,25 @@ let carList = [
     'Tour Modified',
     'Street Stock'
 ]
-const carRandom = Math.floor(Math.random() * carList.length);
-
-// gettrack generates a random track from the trackList array
-function gettrack(){
-    document.getElementById('trackresult').innerHTML = trackList[trackRandom];
+// function iterates through carList and outputs each item into the Car list: card
+function displayCars() {
+    let cars = '';
+    carList.forEach(function (item) {
+        cars += "<li>" + item + "</li>";
+    });
+    document.getElementById('cars').innerHTML = cars;
 }
+displayCars();
 
-// getcar generates a random track from the carList array
-function getcar(){
+// function to clear selections and allow for new track/car combo, I chose this method over remove() due to extra browser support via innerHTML (IE)
+function clearChoices(){
+    document.getElementById('trackresult').innerHTML = "";
+    document.getElementById('carresult').innerHTML = "";
+}
+// Grabs a random track and car combo, then outputs to separately designated results sections via one button
+function trackAndCar() {
+    const trackRandom = Math.floor(Math.random() * trackList.length);
+    document.getElementById('trackresult').innerHTML = trackList[trackRandom];
+    const carRandom = Math.floor(Math.random() * carList.length);
     document.getElementById('carresult').innerHTML = carList[carRandom];
 }

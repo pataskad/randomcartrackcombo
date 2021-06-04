@@ -7,59 +7,60 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Car | Track Combo</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <!-- Not necessary unless downloading bootstrap vs using CDN. <link rel="stylesheet" type="text/scss" href="{% static '/sass/styles.scss' %}">-->
     </head>
 
     <body>
-        <!--random.js contains functions to randomize a set of tracks and cars-->
-        <script src="{% static 'js/random.js' %}"></script>
-        <!--BREAKDOWN: Create title/header, then two "wells", one for tracks, one for cars.  
+        
+        <!--BREAKDOWN:  
             Upon clicking a button randomly select one car and one track from a pre set list via Javascript (may start with two separate functions, then combine later)
             Minimal CSS/SCSS? styling to begin, add in later if necessary but not the purpose of this project
         -->
         <main>
             <div class="container-fluid text-center">
-                <h1>iRacing Car and Track Combo Generator</h1>
+                <h1 style="padding-top: 20px; color: #d1292c;">iRacing Car and Track Combo Generator</h1>
                 <div class="row">
-                    <!--left "card" (aka well) displays track list generator. Ideally displays full list to choose from as well-->
+                    <!--left "card" (aka well/card) displays track list generator. Ideally displays full list to choose from as well-->
                     <div class="col-lg-6">
-                        <h4>Track list:</h4>
-                        <div class="card">
-                            <!--Need button to start randomness-->
-                            <p>placeholder</p>
-                            <div class="row">
-                                <div class="col-lg-4 mx-auto">
-                                    <button onclick="gettrack()" class="btn btn-primary">Generate Random Track</button>
-                                </div>
-                            </div>
+                        <h4 style="color: #007bff;">Track list:</h4>
+                        <div class="card bg-light">
+                            <!--Display list of tracks in data structure-->
+                            <ul style="padding: 0px; margin-bottom: 5px;">
+                                <li id="tracks" style="list-style-type: none;"></li>
+                            </ul>
                         </div>
                     </div>
-                    <!--right "card" (aka well) displays car list generator.  Ideally displays full list to choose from as well-->
+                    <!--right "card" (aka well/card) displays car list generator.  Ideally displays full list to choose from as well-->
                     <div class="col-lg-6">
-                        <h4>Car list:</h4>
-                        <div class="card">
-                            <p>placeholder</p>
-                            <div class="row">
-                                <div class="col-lg-4 mx-auto">
-                                    <button onclick="getcar()" class="btn btn-primary">Generate Random Car</button>
-                                </div>
-                            </div>
+                        <h4 style="color: #007bff;">Car list:</h4>
+                        <div class="card bg-light">
+                            <!--Displays list of cars in data structure-->
+                            <ul style="padding: 0px; margin-bottom: 5px;">
+                                <li id="cars" style="list-style-type: none;"></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <!--This "result" section is used for displaying the results of the random generator-->
-                <div class="col-lg-12">
-                    <h2>Result:</h2>
-                    <div class="card">
-                        <!--Need button to start randomness-->
-                        <h3>Track Selection:</h3>
-                        <div id="trackresult"></div>
-                        <h3>Car Selection:</h3>
-                        <div id="carresult"></div>
+                <div class="col-lg-12" style="padding: 0px;">
+                    <h2 style="color: #d1292c; margin-top: 20px;">Results:</h2>
+                    <div class="card bg-light">
+                        <!--Outputs random track and car below-->
+                        <h4>Track Selection:</h4>
+                        <div id="trackresult" style="font-size: larger; color: #d1292c;"></div>
+                        <h4>Car Selection:</h4>
+                        <div id="carresult" style="font-size: larger; color: #d1292c;"></div>
+                        <div class="row mx-auto">
+                            <button onclick="trackAndCar()" class="btn btn-primary" style="margin-top: 10px;">Generate Random Track and Car</button>
+                        </div>
+                        <div class="row mx-auto" style="margin-bottom: 15px;">
+                            <button onclick="clearChoices()" class="btn btn-primary" style="margin-top: 10px;">Clear Choices</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
-        
+        <!--random.js contains functions to randomize a set of tracks and cars-->
+        <script src="{% static 'js/random.js' %}"></script>
     </body>
 </html>
