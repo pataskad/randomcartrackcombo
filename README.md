@@ -7,9 +7,7 @@ Last Update: 06/04/2021
     This project is simple in nature and intends to provide a quick, randomized function to select a car and track combination for a weekly league on the game iRacing (personal use).
 
 # Development plan and scope #
-    Over time this project will evolve as my knowledge and skills using Javascript increase.  To start, this project will be crude in nature but will become more automated over time. This project will start with pre-set track and car lists as separate functions to select on a random roll basis, as development progresses this project will be intended to combine each dataset to randomly select a track/car pair through one button.  
-
-    Additionally, the future theory of this project is to allow any user to add in their own tracks and cars to randomly select from upon the click of a button.
+    Over time this project will evolve as my knowledge and skills using Javascript increase.  To start, this project will be crude in nature but will become more complex over time. This project starts with pre-set track and car lists with one function to select a car/track combo on a random roll basis.  Additionally, the next steps of this project are to allow a user to add/remove their own selection of tracks and cars to randomly select from upon the click of a button(function).
 
 # Technologies utilized #
     Javascript, HTML5, CSS3, Bootstrap v4.1.3, CSS cdn only as of v1.0.0, Django/Python
