@@ -35,18 +35,18 @@
                         <!--Adding tracks and cars NOT COMPLETE-->
                         <div class="row mx-auto" style="padding-bottom: 15px;">
                             <!--Necessary to have form and csrf token??-->
-                            <div class="row2" style="display: inline-flex;">
-                                <input class="form-control" type="text" id="newtrack">
-                                <button onclick="addTrack(item)" class="btn btn-primary" style="margin-left: 10px;" type="submit">Add Track</button> <!--Add functionality-->
-                            </div>
-
+                            <form>
+                                <div class="row2" style="display: inline-flex;">
+                                    <input class="form-control" type="text" id="newtrack" required> 
+                                        <input class="btn btn-primary" onclick="addTrack()" style="margin-left: 10px;" type="button" value="Add Track"/> <!--Add functionality-->
+                                </div>
+                            </form>
                         </div>
                         <div class="row mx-auto" style="padding-bottom: 15px;">
                             <form method="POST">
-                                {% csrf_token %}
                                 <div class="row2" style="display: inline-flex;">
-                                    <input class="form-control" type="text" id="newcar">
-                                    <button onclick="addCar()" class="btn btn-primary" style="margin-left: 10px;" type="submit">Add Car</button> <!--Add functionality-->
+                                    <input class="form-control" type="text" id="newcar" required>
+                                        <input onclick="addCar()" class="btn btn-primary" style="margin-left: 10px;" type="button" value="Add Car"/> <!--Add functionality-->
                                 </div>
                             </form>
                         </div>

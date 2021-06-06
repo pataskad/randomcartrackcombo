@@ -45,11 +45,21 @@ let carList = [
     'Tour Modified',
     'Street Stock'
 ]
+// adding items
+function addTrack() {
+
+}
+function addCar() {
+    carList.push(document.getElementById('newcar').value);
+    console.log(carList);
+    displayCars();
+    //document.getElementById('cars').join = cars;
+}
 // function iterates through carList and outputs each item into the Car list: card
 function displayCars() {
     let cars = '';
     carList.forEach(function (item) {
-        cars += "<li style='font-size: large; margin: 3px;'>" + item + "<button onclick='removeCar())' style='margin-left: 185px' class='btn btn-danger'>Delete</button>" + "</li>";
+        cars += "<li style='font-size: large; margin: 3px;'>" + item + "<button onclick='removeCar()' style='margin-left: 185px' class='btn btn-danger'>Delete</button>" + "</li>";
     });
     document.getElementById('cars').innerHTML = cars;
 
@@ -68,13 +78,7 @@ function trackAndCar() {
     const carRandom = Math.floor(Math.random() * carList.length);
     document.getElementById('carresult').innerHTML = carList[carRandom];
 }
-// adding items
-function addTrack() {
 
-}
-function addCar() {
-
-}
 // removing items from the array (tracks and cars) pass in desired array (trackList or carList) to remove an item
 function removeTrack() {
 
