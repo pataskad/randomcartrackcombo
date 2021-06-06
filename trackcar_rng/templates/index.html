@@ -11,7 +11,6 @@
     </head>
 
     <body>
-        
         <!--BREAKDOWN:  
             Upon clicking a button randomly select one car and one track from a pre set list via Javascript (may start with two separate functions, then combine later)
             Minimal CSS/SCSS? styling to begin, add in later if necessary but not the purpose of this project
@@ -19,36 +18,13 @@
         <main>
             <div class="container-fluid text-center">
                 <h1 style="padding-top: 20px; color: #d1292c;">iRacing Car and Track Combo Generator</h1>
-                <div class="row">
-                    <!--left "card" (aka well/card) displays track list generator. Ideally displays full list to choose from as well-->
-                    <div class="col-lg-6">
-                        <h4 style="color: #007bff; margin-top: 10px;">Track list:</h4>
-                        <div class="card bg-light">
-                            <!--Display list of tracks in data structure-->
-                            <ul style="padding: 0px; margin-bottom: 5px;">
-                                <li id="tracks" style="list-style-type: none;"></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--right "card" (aka well/card) displays car list generator.  Ideally displays full list to choose from as well-->
-                    <div class="col-lg-6">
-                        <h4 style="color: #007bff; margin-top: 10px;">Car list:</h4>
-                        <div class="card bg-light">
-                            <!--Displays list of cars in data structure-->
-                            <ul style="padding: 0px; margin-bottom: 5px;">
-                                <li id="cars" style="list-style-type: none;"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!--This "result" section is used for displaying the results of the random generator-->
                 <div class="col-lg-12" style="padding: 0px;">
                     <h2 style="color: #d1292c; margin-top: 20px;">Results:</h2>
                     <div class="card bg-light">
                         <!--Outputs random track and car below-->
-                        <h4 style="margin-top: 10px;">Track Selection:</h4>
+                        <h4 style="margin-top: 10px; color: #007bff;">Track Selection:</h4>
                         <div id="trackresult" style="font-size: larger; color: #d1292c;"></div>
-                        <h4 style="margin-top: 10px;">Car Selection:</h4>
+                        <h4 style="margin-top: 10px; color: #007bff;">Car Selection:</h4>
                         <div id="carresult" style="font-size: larger; color: #d1292c;"></div>
                         <div class="row mx-auto">
                             <button onclick="trackAndCar()" class="btn btn-primary" style="margin-top: 10px;">Generate Random Track and Car</button>
@@ -58,9 +34,29 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <!--left "card" (aka well/card) displays track list generator. Ideally displays full list to choose from as well-->
+                    <div class="col-lg-6">
+                        <h4 style="color: #007bff; margin-top: 10px;">Track list:</h4>
+                        <div class="card bg-light">
+                            <!--Display list of tracks in data structure-->
+                            <ul id="tracks" style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
+                        </div>
+                    </div>
+                    <!--right "card" (aka well/card) displays car list generator.  Ideally displays full list to choose from as well-->
+                    <div class="col-lg-6">
+                        <h4 style="color: #007bff; margin-top: 10px;">Car list:</h4>
+                        <div class="card bg-light">
+                            <!--Displays list of cars in data structure-->
+                            <ul id="cars" style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!--This "result" section is used for displaying the results of the random generator-->
             </div>
         </main>
         <!--random.js contains functions to randomize a set of tracks and cars-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="{% static 'js/random.js' %}"></script>
     </body>
 </html>

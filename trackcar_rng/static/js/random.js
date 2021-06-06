@@ -3,7 +3,8 @@
 /* This file is configured to select a random car and track currently using two separate arrays and functions, one for the track and one for the car
     Asphalt car and track selections only (for now).
 */
-
+// JQuery - to be determined/ for future use
+// data structures
 let trackList = [
     'Bristol',
     'Five Flags',
@@ -29,7 +30,7 @@ let trackList = [
 function displayTracks() {
     let tracks = '';
     trackList.forEach(function (item) {
-        tracks += "<li>" + item + "</li>";
+        tracks += "<div class='row' style='display: inline-flex; place-content: flex-end; margin: 15px;'><li style='font-size: large;'>" + item + "<button id='track-btn' style='margin-left: 330px' class='btn btn-danger'>Delete</button></div>" + "</li>";
     });
     document.getElementById("tracks").innerHTML = tracks;
 }
@@ -48,9 +49,10 @@ let carList = [
 function displayCars() {
     let cars = '';
     carList.forEach(function (item) {
-        cars += "<li>" + item + "</li>";
+        cars += "<div class='row' style='display: inline-flex; place-content: flex-end; margin: 15px;'><li style='font-size: large;'>" + item + "<button onclick='deleteItem()' style='margin-left: 330px' class='btn btn-danger'>Delete</button></div>" + "</li>";
     });
     document.getElementById('cars').innerHTML = cars;
+
 }
 displayCars();
 
@@ -65,4 +67,18 @@ function trackAndCar() {
     document.getElementById('trackresult').innerHTML = trackList[trackRandom];
     const carRandom = Math.floor(Math.random() * carList.length);
     document.getElementById('carresult').innerHTML = carList[carRandom];
+}
+// adding items
+function addTrack() {
+
+}
+function addCar() {
+
+}
+// removing items from the array (tracks and cars) pass in desired array (trackList or carList) to remove an item
+function removeTrack() {
+
+}
+function removeCar() {
+    
 }

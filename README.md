@@ -1,6 +1,6 @@
-Version: v1.0.2
+Version: v1.0.3
 Created: 06/03/2021
-Last Update: 06/04/2021
+Last Update: 06/05/2021
 
 # Random Track and Car generator using Javascript #
 
