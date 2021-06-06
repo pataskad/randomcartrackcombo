@@ -32,6 +32,24 @@
                         <div class="row mx-auto" style="margin-bottom: 15px;">
                             <button onclick="clearChoices()" class="btn btn-primary" style="margin-top: 10px;">Clear Choices</button>
                         </div>
+                        <!--Adding tracks and cars NOT COMPLETE-->
+                        <div class="row mx-auto" style="padding-bottom: 15px;">
+                            <!--Necessary to have form and csrf token??-->
+                            <div class="row2" style="display: inline-flex;">
+                                <input class="form-control" type="text" id="newtrack">
+                                <button onclick="addTrack(item)" class="btn btn-primary" style="margin-left: 10px;" type="submit">Add Track</button> <!--Add functionality-->
+                            </div>
+
+                        </div>
+                        <div class="row mx-auto" style="padding-bottom: 15px;">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="row2" style="display: inline-flex;">
+                                    <input class="form-control" type="text" id="newcar">
+                                    <button onclick="addCar()" class="btn btn-primary" style="margin-left: 10px;" type="submit">Add Car</button> <!--Add functionality-->
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -39,16 +57,20 @@
                     <div class="col-lg-6">
                         <h4 style="color: #007bff; margin-top: 10px;">Track list:</h4>
                         <div class="card bg-light">
+                            <div class="row" style="place-content: space-around; text-align: right; margin: 15px">
+                                <ul id="tracks" style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
+                            </div>
                             <!--Display list of tracks in data structure-->
-                            <ul id="tracks" style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
                         </div>
                     </div>
                     <!--right "card" (aka well/card) displays car list generator.  Ideally displays full list to choose from as well-->
                     <div class="col-lg-6">
                         <h4 style="color: #007bff; margin-top: 10px;">Car list:</h4>
                         <div class="card bg-light">
+                            <div class="row" style="place-content: space-around; text-align: right; margin: 15px;">
+                                <ul id="cars" style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
+                            </div>
                             <!--Displays list of cars in data structure-->
-                            <ul id="cars" style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
                         </div>
                     </div>
                 </div>

@@ -30,7 +30,7 @@ let trackList = [
 function displayTracks() {
     let tracks = '';
     trackList.forEach(function (item) {
-        tracks += "<div class='row' style='display: inline-flex; place-content: flex-end; margin: 15px;'><li style='font-size: large;'>" + item + "<button id='track-btn' style='margin-left: 330px' class='btn btn-danger'>Delete</button></div>" + "</li>";
+        tracks += "<li style='font-size: large; margin: 3px;'>" + item + "<button onclick='removetrack()'id='track-btn' style='margin-left: 185px' class='btn btn-danger'>Delete</button>" + "</li>";
     });
     document.getElementById("tracks").innerHTML = tracks;
 }
@@ -49,7 +49,7 @@ let carList = [
 function displayCars() {
     let cars = '';
     carList.forEach(function (item) {
-        cars += "<div class='row' style='display: inline-flex; place-content: flex-end; margin: 15px;'><li style='font-size: large;'>" + item + "<button onclick='deleteItem()' style='margin-left: 330px' class='btn btn-danger'>Delete</button></div>" + "</li>";
+        cars += "<li style='font-size: large; margin: 3px;'>" + item + "<button onclick='removeCar())' style='margin-left: 185px' class='btn btn-danger'>Delete</button>" + "</li>";
     });
     document.getElementById('cars').innerHTML = cars;
 
@@ -80,5 +80,5 @@ function removeTrack() {
 
 }
 function removeCar() {
-    
+
 }
