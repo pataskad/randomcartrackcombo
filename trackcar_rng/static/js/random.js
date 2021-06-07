@@ -26,6 +26,13 @@ let trackList = [
     'Thompson',
     'USA'
 ]
+
+// add new track
+function addTrack() {
+    trackList.unshift(document.getElementById('newtrack').value);
+    console.log(trackList);
+    displayTracks();
+}
 // function iterates through trackList and outputs each (item) into the html #tracks div
 function displayTracks() {
     let tracks = '';
@@ -45,15 +52,11 @@ let carList = [
     'Tour Modified',
     'Street Stock'
 ]
-// adding items
-function addTrack() {
-
-}
+// adding new car
 function addCar() {
-    carList.push(document.getElementById('newcar').value);
+    carList.unshift(document.getElementById('newcar').value);
     console.log(carList);
     displayCars();
-    //document.getElementById('cars').join = cars;
 }
 // function iterates through carList and outputs each item into the Car list: card
 function displayCars() {
@@ -84,5 +87,5 @@ function removeTrack() {
 
 }
 function removeCar() {
-
+    
 }
