@@ -84,8 +84,8 @@ function trackAndCar() {
 
 // removing items from the array (tracks and cars) pass in desired array (trackList or carList) to remove an item
 function removeTrack() {
-
+    // displayTrack();????
 }
 function removeCar() {
-    
+    // displayCar();????
 }
