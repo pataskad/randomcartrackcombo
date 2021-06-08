@@ -36,7 +36,8 @@
                         <div class="row mx-auto" style="padding-bottom: 15px;">
                             <!--Necessary to have form and csrf token??-->
                             <form method="POST">
-                                <div class="row2" style="display: inline-flex;">
+                                {% csrf_token %}
+                                <div class="row2" style="display: inline-flex;"> <!--Must use button to add to list, cannot press 'enter' in input field-->
                                     <input class="form-control" type="text" id="newtrack" required> 
                                         <input class="btn btn-primary" onclick="addTrack()" style="margin-left: 10px;" type="button" value="Add Track"/> <!--Add functionality-->
                                 </div>
@@ -44,7 +45,8 @@
                         </div>
                         <div class="row mx-auto" style="padding-bottom: 15px;">
                             <form method="POST">
-                                <div class="row2" style="display: inline-flex;">
+                                {% csrf_token %}
+                                <div class="row2" style="display: inline-flex;"> <!--Must use button to add to list, cannot press 'enter' in input field-->
                                     <input class="form-control" type="text" id="newcar" required>
                                         <input onclick="addCar()" class="btn btn-primary" style="margin-left: 10px;" type="button" value="Add Car"/> <!--Add functionality-->
                                 </div>
