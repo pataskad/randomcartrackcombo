@@ -4,6 +4,13 @@
     Asphalt car and track selections only (for now).
 */
 // JQuery - to be determined/ for future use
+$(document).ready(function() {
+    $('li').on('click', 'button', function(e) { // this section removes the corresponding li element as needed, but does NOT modify the array to account for changes of the array, works for car and track listing
+        e.preventDefault;
+        $(this).parent().remove();
+        console.log(trackList);
+    });
+});
 // data structures
 let trackList = [
     'Bristol',
@@ -33,20 +40,23 @@ function addTrack() {
     displayTracks(); // display array with new element added, saves in session only!f
     document.getElementById('newtrack').value = '';
 }
+
+// Remove track items
+function removeTrack() {
+    document.getElementById('track_li');
+    trackList.splice(id, 1);
+    console.log(trackList); //display array to console for debugging
+}
 // function iterates through trackList and outputs each (item) into the html #tracks div
 function displayTracks() {
     let tracks = []; //forEach function adds each item(track) to the tracks string??! Should this be a string or array?
     trackList.forEach(function (item) { // Need to generate unique id with each list element in order to select specific elements for deletion
-        tracks += "<li id='track_li' style='font-size: large; margin: 3px;'>" + item + "<button onclick='removeTrack()' style='margin-left: 185px' class='btn btn-danger'>Delete</button>" + "</li>";
+        tracks += "<li id='track_li' style='font-size: large; margin: 3px;'>" + item + "<button style='margin-left: 185px' class='btn btn-danger'>Delete" + "</li></button>" ;
     });
-    document.getElementById("tracks").innerHTML = tracks;
+    // add for loop to loop through each element item and assign unique id ('tracks' + i) below
+    document.getElementById("tracks").innerHTML = tracks; // original WORKING
 }
 displayTracks();
-
-// Remove track items
-function removeTrack() {
-    document.getElementById('track_li').remove(); //removes top li element, does NOT mutate array correctly, resets full array when adding new track
-}
 
 let carList = [
     'ARCA',
@@ -79,7 +89,7 @@ displayCars();
 
 // remove car items
 function removeCar() {
-    // displayCar();????
+
 }
 
 // function to clear selections and allow for new track/car combo, I chose this method over remove() due to extra browser support via innerHTML (IE)
