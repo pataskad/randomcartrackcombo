@@ -1,16 +1,25 @@
 'use strict';
 
-/* This file is configured to select a random car and track currently using two separate arrays and functions, one for the track and one for the car
-    Asphalt car and track selections only (for now).
-*/
+// breakdown file to more components?
+
 // JQuery - to be determined/ for future use
 $(document).ready(function() {
-    $('li').on('click', 'button', function(e) { // this section removes the corresponding li element as needed, but does NOT modify the array to account for changes of the array, works for car and track listing
+    $('#tracks').on('click', 'button', function(e) { // this section removes the corresponding trackList array element
         e.preventDefault;
-        $(this).parent().remove();
+        let idx = $(this).index('button'); // removes array item two places down??
+        trackList.splice(idx-2, 1); // -2 offset to select correct array item
         console.log(trackList);
+        displayTracks();
+    });
+    $('#cars').on('click', 'button', function(e) { // this section removes the corresponding carList array element
+        e.preventDefault;
+        let idx = $(this).index('button');
+        carList.splice(idx-1, 1);  // NOT SPLICING! Why?!
+        console.log(carList);
+        displayCars();
     });
 });
+
 // data structures
 let trackList = [
     'Bristol',
@@ -33,31 +42,6 @@ let trackList = [
     'Thompson',
     'USA'
 ]
-// add new track and reset input field
-function addTrack() {
-    trackList.unshift(document.getElementById('newtrack').value); // grab new track input value
-    console.log(trackList);
-    displayTracks(); // display array with new element added, saves in session only!f
-    document.getElementById('newtrack').value = '';
-}
-
-// Remove track items
-function removeTrack() {
-    document.getElementById('track_li');
-    trackList.splice(id, 1);
-    console.log(trackList); //display array to console for debugging
-}
-// function iterates through trackList and outputs each (item) into the html #tracks div
-function displayTracks() {
-    let tracks = []; //forEach function adds each item(track) to the tracks string??! Should this be a string or array?
-    trackList.forEach(function (item) { // Need to generate unique id with each list element in order to select specific elements for deletion
-        tracks += "<li id='track_li' style='font-size: large; margin: 3px;'>" + item + "<button style='margin-left: 185px' class='btn btn-danger'>Delete" + "</li></button>" ;
-    });
-    // add for loop to loop through each element item and assign unique id ('tracks' + i) below
-    document.getElementById("tracks").innerHTML = tracks; // original WORKING
-}
-displayTracks();
-
 let carList = [
     'ARCA',
     'Late Model Stock',
@@ -67,6 +51,24 @@ let carList = [
     'Tour Modified',
     'Street Stock'
 ]
+// add new track and reset input field
+function addTrack() {
+    trackList.unshift(document.getElementById('newtrack').value); // grab new track input value
+    console.log(trackList);
+    displayTracks(); // display array with new element added
+    document.getElementById('newtrack').value = '';
+}
+
+// function iterates through trackList and outputs each (item) into the html #tracks div
+function displayTracks() {
+    let tracks = []; //forEach function adds each item(track) to the tracks string??! Should this be a string or array?
+    trackList.forEach(function (item) { // Need to generate unique id with each list element in order to select specific elements for deletion
+        tracks += "<li id='track_li' style='font-size: large; margin: 3px;'>" + item + "<button id='track_btn' style='margin-left: 185px' class='btn btn-danger'>Delete" + "</li></button>" ;
+
+    });
+    document.getElementById("tracks").innerHTML = tracks;
+}
+displayTracks();
 
 // adding new car and reset input field
 function addCar() {
@@ -80,19 +82,14 @@ function addCar() {
 function displayCars() {
     let cars = [];
     carList.forEach(function (item) {
-        cars += "<li style='font-size: large; margin: 3px;'>" + item + "<button onclick='removeCar()' style='margin-left: 185px' class='btn btn-danger'>Delete</button>" + "</li>";
+        cars += "<li id='car_li' style='font-size: large; margin: 3px;'>" + item + "<button id='car_btn' style='margin-left: 185px' class='btn btn-danger'>Delete" + "</li></button>" ;
     });
-    document.getElementById('cars').innerHTML = cars;
-
+    document.getElementById("cars").innerHTML = cars;
 }
 displayCars();
 
-// remove car items
-function removeCar() {
 
-}
-
-// function to clear selections and allow for new track/car combo, I chose this method over remove() due to extra browser support via innerHTML (IE)
+// function to clear randomized selections
 function clearChoices(){
     document.getElementById('trackresult').innerHTML = "";
     document.getElementById('carresult').innerHTML = "";
