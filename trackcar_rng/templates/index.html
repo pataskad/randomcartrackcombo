@@ -29,7 +29,6 @@
                         </div>
                         <!--Adding tracks and cars NOT COMPLETE-->
                         <div class="row mx-auto" style="padding-bottom: 15px;">
-                            <!--Necessary to have form and csrf token??-->
                             <form method="POST">
                                 {% csrf_token %}
                                 <div class="row2" style="display: inline-flex;"> <!--Must use button to add to list, cannot press 'enter' in input field-->
@@ -54,7 +53,7 @@
                         <h4 style="color: #007bff; margin-top: 10px;">Track list:</h4>
                         <div class="card bg-light">
                             <div class="row" style="place-content: space-around; text-align: right; margin: 15px">
-                                <ul id="tracks" style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
+                                <ul id='tracks' style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
                             </div>
                             <!--Display list of tracks in data structure-->
                         </div>
@@ -64,7 +63,7 @@
                         <h4 style="color: #007bff; margin-top: 10px;">Car list:</h4>
                         <div class="card bg-light">
                             <div class="row" style="place-content: space-around; text-align: right; margin: 15px;">
-                                <ul id="cars" style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
+                                <ul id='cars' style="list-style-type: none; padding: 0px; display: inline-grid;"></ul>
                             </div>
                             <!--Displays list of cars in data structure-->
                         </div>

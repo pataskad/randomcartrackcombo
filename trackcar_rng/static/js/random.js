@@ -2,23 +2,24 @@
 
 // breakdown file to more components?
 
-// JQuery - to be determined/ for future use
+// JQuery - for splicing data structures
 $(document).ready(function() {
     $('#tracks').on('click', 'button', function(e) { // this section removes the corresponding trackList array element
-        e.preventDefault;
+        e.preventDefault();
         let idx = $(this).index('button'); // removes array item two places down??
         trackList.splice(idx-2, 1); // -2 offset to select correct array item
         console.log(trackList);
         displayTracks();
     });
-    $('#cars').on('click', 'button', function(e) { // this section removes the corresponding carList array element
-        e.preventDefault;
-        let idx = $(this).index('button');
-        carList.splice(idx-1, 1);  // NOT SPLICING! Why?!
+    $('#cars').on('click', 'button', function(e) { // this section removes the corresponding trackList array element
+        e.preventDefault();
+        let idx = $(this).index('button'); // only splices after trackList array is depleted
+        carList.splice(idx-2, 1);
         console.log(carList);
         displayCars();
     });
 });
+
 
 // data structures
 let trackList = [
